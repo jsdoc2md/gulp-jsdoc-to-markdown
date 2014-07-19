@@ -3,8 +3,6 @@
 [![Build Status](https://travis-ci.org/75lb/gulp-jsdoc-to-markdown.svg?branch=master)](https://travis-ci.org/75lb/gulp-jsdoc-to-markdown)
 [![Dependency Status](https://david-dm.org/75lb/gulp-jsdoc-to-markdown.svg)](https://david-dm.org/75lb/gulp-jsdoc-to-markdown)
 
-***work in progress***
-
 #gulp-jsdoc-to-markdown
 Plugin for [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown). Works in both buffer and streaming modes.
 
@@ -49,6 +47,6 @@ $ npm install gulp-jsdoc-to-markdown --save-dev
 ```
 
 ##Warning
-Currently, due to way file names are significant in jsdoc `@module` tag behaviour, use of this plugin with input containing multiple modules can cause explosions. Investigating a solution. With all other input it's fine. If you're documenting multiple modules use a gulp task consuming jsdoc-to-markdown directly, as in [this example](https://github.com/75lb/jsdoc-to-markdown#as-a-gulp-plug-in). 
+Currently, due to the way file names are significant in jsdoc `@module` tag behaviour, use of this plugin with input containing multiple modules can cause explosions. Investigating a solution. With all other input it's fine. If you're documenting multiple modules, use a gulp task like [this one](https://github.com/75lb/jsdoc-to-markdown#as-a-gulp-plug-in).
 
 *documented by [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown)*
