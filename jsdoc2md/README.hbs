@@ -4,18 +4,22 @@
 [![Dependency Status](https://david-dm.org/75lb/gulp-jsdoc-to-markdown.svg)](https://david-dm.org/75lb/gulp-jsdoc-to-markdown)
 
 #gulp-jsdoc-to-markdown
-Gulp plugin for [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown).
+Plugin for [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown). Works in both buffer and streaming modes.
 
 ##Example `gulpfile.js`
 ```js
 "use strict";
 var gulp = require("gulp");
-var gulpJsdoc2md = require("gulp-jsdoc-to-markdown");
+var gutil = require("gulp-util");
+var jsdoc2md = require("gulp-jsdoc-to-markdown");
 var rename = require("gulp-rename");
 
-gulp.task("default", function(){
+gulp.task("docs", function(){
     gulp.src("src/*.js")
-        .pipe(gulpJsdoc2md())
+        .pipe(jsdoc2md())
+        .on("error", function(err){
+            gutil.log("jsdoc2md failed:", err.message);
+        })
         .pipe(rename(function(path){
             path.extname = ".md";
         }))

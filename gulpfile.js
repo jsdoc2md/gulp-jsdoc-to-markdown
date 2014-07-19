@@ -1,6 +1,7 @@
 "use strict";
 var gulp = require("gulp");
-var gulpJsdoc2md = require("./");
+var gutil = require("gulp-util");
+var jsdoc2md = require("./");
 var rename = require("gulp-rename");
 var del = require("del");
 
@@ -10,14 +11,20 @@ gulp.task("clean", function(done){
 
 gulp.task("one", [ "clean" ], function(){
     return gulp.src("test/fixture/code.js")
-        .pipe(gulpJsdoc2md())
+        .pipe(jsdoc2md())
+        .on("error", function(err){
+            gutil.log("jsdoc2md failed:", err.message);
+        })
         .pipe(rename("code.md"))
         .pipe(gulp.dest("tmp/one"));
 });
 
 gulp.task("two", [ "clean" ], function(){
     return gulp.src("test/fixture/*.js")
-        .pipe(gulpJsdoc2md())
+        .pipe(jsdoc2md())
+        .on("error", function(err){
+            gutil.log("jsdoc2md failed:", err.message);
+        })
         .pipe(rename(function(path){
             path.extname = ".md";
         }))
@@ -27,7 +34,10 @@ gulp.task("two", [ "clean" ], function(){
 /* streaming mode */
 gulp.task("three", [ "clean" ], function(){
     return gulp.src("test/fixture/*.js", { buffer: false })
-        .pipe(gulpJsdoc2md())
+        .pipe(jsdoc2md())
+        .on("error", function(err){
+            gutil.log("jsdoc2md failed:", err.message);
+        })
         .pipe(rename(function(path){
             path.extname = ".md";
         }))
