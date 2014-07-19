@@ -1,0 +1,33 @@
+{
+  "name": "gulp-jsdoc-to-markdown",
+  "author": "Lloyd Brookes <75pound@gmail.com>",
+  "version": "0.0.0",
+  "description": "gulp-jsdoc-to-markdown",
+  "repository": "https://github.com/75lb/gulp-jsdoc-to-markdown.git",
+  "main": "./lib/gulp-jsdoc-to-markdown.js",
+  "keywords": [
+    "gulpplugin",
+    "jsdoc",
+    "markdown",
+    "generator",
+    "documentation",
+    "md"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "tape test/*.js",
+    "lint": "jshint lib/*.js bin/*.js test/*.js; echo",
+    "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo",
+    "gulp": "gulp; echo"
+  },
+  "devDependencies": {
+    "gulp": "^3.8.6"
+  },
+  "dependencies": {
+    "gulp-util": "^3.0.0",
+    "jsdoc-to-markdown": "^0.5.4",
+    "through2": "^0.5.1"
+  }
+}
