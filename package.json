@@ -23,6 +23,7 @@
     "gulp": "gulp; echo"
   },
   "devDependencies": {
+    "del": "^0.1.1",
     "gulp": "^3.8.6",
     "tape": "^2.13.3"
   },
