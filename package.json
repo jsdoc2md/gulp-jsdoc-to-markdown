@@ -24,9 +24,12 @@
   },
   "devDependencies": {
     "del": "^0.1.1",
+    "event-stream": "^3.1.5",
     "gulp": "^3.8.6",
+    "gulp-concat": "^2.3.3",
+    "gulp-rename": "^1.2.0",
     "tape": "^2.13.3",
-    "gulp-rename": "^1.2.0"
+    "vinyl": "^0.3.0"
   },
   "dependencies": {
     "gulp-util": "^3.0.0",
