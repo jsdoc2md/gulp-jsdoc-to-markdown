@@ -23,7 +23,8 @@
     "gulp": "gulp; echo"
   },
   "devDependencies": {
-    "gulp": "^3.8.6"
+    "gulp": "^3.8.6",
+    "tape": "^2.13.3"
   },
   "dependencies": {
     "gulp-rename": "^1.2.0",
