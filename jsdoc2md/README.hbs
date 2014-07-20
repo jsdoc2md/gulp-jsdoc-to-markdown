@@ -7,7 +7,7 @@
 Plugin for [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown). Works in both buffer and streaming modes.
 
 ##Warning
-Due to streaming nature of gulp conflicting with the way jsdoc renders `@module` tags (where file name and structure is significant), use of this plugin with input containing multiple @modules can cause explosions. Investigating a solution. If you're documenting multiple modules, use a gulp task like [this one](https://github.com/75lb/jsdoc-to-markdown#as-a-gulp-task).
+Due to the streaming nature of gulp conflicting with the way jsdoc renders `@module` tags (where file name and structure is significant), use of this plugin with input containing multiple @modules can cause explosions. Investigating a solution. If you're documenting multiple modules, use a gulp task like [this one](https://github.com/75lb/jsdoc-to-markdown#as-a-gulp-task).
 
 ##Example `gulpfile.js`
 One markdown file out per source file in:
