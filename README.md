@@ -23,7 +23,7 @@ gulp.task("docs", function(){
     return gulp.src("src/*.js")
         .pipe(jsdoc2md())
         .on("error", function(err){
-            gutil.log("jsdoc2md failed:", err.message);
+            gutil.log(gutil.colors.red("jsdoc2md failed"), err.message)
         })
         .pipe(rename(function(path){
             path.extname = ".md";
