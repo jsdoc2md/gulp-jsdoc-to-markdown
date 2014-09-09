@@ -1,7 +1,7 @@
 {
   "name": "gulp-jsdoc-to-markdown",
   "author": "Lloyd Brookes <75pound@gmail.com>",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "gulp-jsdoc-to-markdown",
   "repository": "https://github.com/75lb/gulp-jsdoc-to-markdown.git",
   "main": "./lib/gulp-jsdoc-to-markdown.js",
