@@ -26,14 +26,14 @@
     "del": "~0.1.1",
     "event-stream": "^3.1.5",
     "gulp": "^3.8.6",
-    "gulp-concat": "^2.3.3",
+    "gulp-concat": "^2.4.1",
     "gulp-rename": "^1.2.0",
-    "tape": "^2.13.3",
-    "vinyl": "~0.3.0"
+    "tape": "^3",
+    "vinyl": "~0.4.3"
   },
   "dependencies": {
     "gulp-util": "^3.0.0",
     "jsdoc-to-markdown": "~0.5.4",
-    "through2": "~0.5.1"
+    "through2": "~0.6.2"
   }
 }
