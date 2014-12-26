@@ -12,7 +12,7 @@ gulp.task("clean", function(done){
 
 gulp.task("one", [ "clean" ], function(){
     return gulp.src("test/fixture/code.js")
-        .pipe(jsdoc2md())
+        .pipe(jsdoc2md({ private: true }))
         .on("error", function(err){
             gutil.log("jsdoc2md failed:", err.message);
         })
@@ -49,7 +49,7 @@ gulp.task("three", [ "clean" ], function(){
 gulp.task("four", [ "clean" ], function() {
     return gulp.src("test/fixture/*.js")
         .pipe(concat("all.md"))
-        .pipe(jsdoc2md())
+        .pipe(jsdoc2md({ private: true }))
         .on("error", function(err){
             gutil.log("jsdoc2md failed:", err.message);
         })
