@@ -1,15 +1,14 @@
 [![view on npm](http://img.shields.io/npm/v/gulp-jsdoc-to-markdown.svg)](https://www.npmjs.org/package/gulp-jsdoc-to-markdown)
 [![npm module downloads per month](http://img.shields.io/npm/dm/gulp-jsdoc-to-markdown.svg)](https://www.npmjs.org/package/gulp-jsdoc-to-markdown)
-[![Build Status](https://travis-ci.org/75lb/gulp-jsdoc-to-markdown.svg?branch=master)](https://travis-ci.org/75lb/gulp-jsdoc-to-markdown)
+[![Build Status](https://travis-ci.org/75lb/gulp-jsdoc-to-markdown.svg?branch=next)](https://travis-ci.org/75lb/gulp-jsdoc-to-markdown)
 [![Dependency Status](https://david-dm.org/75lb/gulp-jsdoc-to-markdown.svg)](https://david-dm.org/75lb/gulp-jsdoc-to-markdown)
 
-# New release preview!
-I am close to finishing the next version, so feedback is welcome at this point! See the [next](https://github.com/75lb/gulp-jsdoc-to-markdown/tree/next) branch for installation details..
-
-Anyway, back to the regular documentation:
-
-# gulp-jsdoc-to-markdown
+# gulp-jsdoc-to-markdown@next (preview release)
 Plugin for [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown). Works in both buffer and streaming modes.
+
+This is a preview release for the next version so feedback is welcome at this point! 
+
+Try generating your docs using this preview plugin.. Any issues or feedback, let me know! 
 
 ## Warning
 Due to the streaming nature of gulp conflicting with the way jsdoc renders `@module` tags (where file name and structure is significant), use of this plugin with input containing multiple @modules can cause explosions. Investigating a solution. If you're documenting multiple modules, use a gulp task like [this one](https://github.com/75lb/jsdoc-to-markdown#as-a-gulp-task).
@@ -52,7 +51,7 @@ gulp.task("docs", function() {
 
 ## Install
 ```sh
-$ npm install gulp-jsdoc-to-markdown --save-dev
+$ npm install gulp-jsdoc-to-markdown@next --save-dev
 ```
 
 * * * 
