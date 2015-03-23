@@ -17,8 +17,7 @@ test("streaming mode", function(t){
         t.ok(file.isStream(), "is a stream");
         
         file.contents.pipe(es.wait(function(err, data) {
-            console.log(data);
-            t.ok(/#something/.test(data), "correct data");
+            t.ok(/# something/.test(data), "correct data");
         }));
     });
 });
@@ -34,6 +33,6 @@ test("buffer mode", function(t){
     
     stream.once("data", function(file){
         t.ok(file.isBuffer());
-        t.ok(/#something/.test(file.contents.toString()));
+        t.ok(/# something/.test(file.contents.toString()));
     });
 });
