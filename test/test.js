@@ -7,7 +7,7 @@ var fs = require("fs");
 test("streaming mode", function(t){
     t.plan(2);
     var fakeFile = new File({
-      contents: fs.createReadStream("test/fixture/code.js")
+        contents: fs.createReadStream("test/fixture/code.js")
     });
     
     var stream = gjsdoc2md();
