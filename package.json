@@ -18,7 +18,7 @@
   },
   "scripts": {
     "test": "tape test/*.js",
-    "lint": "jshint lib/*.js bin/*.js test/*.js; echo",
+    "lint": "jshint lib/*.js test/*.js; echo",
     "gulp": "gulp; echo"
   },
   "devDependencies": {
@@ -27,7 +27,7 @@
     "gulp": "^3.8.6",
     "gulp-concat": "^2.4.1",
     "gulp-rename": "^1.2.0",
-    "tape": "^3",
+    "tape": "^4",
     "vinyl": "~0.4.3"
   },
   "dependencies": {
