@@ -6,8 +6,12 @@
 # gulp-jsdoc-to-markdown
 Plugin for [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown). Works in both buffer and streaming modes.
 
-## Warning
-Due to the streaming nature of gulp conflicting with the way jsdoc renders `@module` tags (where file name and structure is significant), use of this plugin with input containing multiple @modules can cause explosions. Investigating a solution. If you're documenting multiple modules, use a gulp task like [this one](https://github.com/jsdoc2md/jsdoc-to-markdown#as-a-gulp-task).
+## Caveat
+If you intend to use this plugin and your code has modules, **you must always supply a name with the `@module` tag**. 
+
+In other words `@module` will fail, `@module my-module` will win. 
+
+If the module name is not provided, jsdoc will try to infer it from the filename of the module. However, gulp deals with streams - not files. And that stream could come from anywhere. We do not know the file name so we cannot infer the module name - so always supply it. [More info here](http://usejsdoc.org/tags-module.html). 
 
 ## `gulpfile.js` examples
 
