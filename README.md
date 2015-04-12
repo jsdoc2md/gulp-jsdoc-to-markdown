@@ -9,8 +9,9 @@ Plugin for [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown). W
 ## Warning
 Due to the streaming nature of gulp conflicting with the way jsdoc renders `@module` tags (where file name and structure is significant), use of this plugin with input containing multiple @modules can cause explosions. Investigating a solution. If you're documenting multiple modules, use a gulp task like [this one](https://github.com/jsdoc2md/jsdoc-to-markdown#as-a-gulp-task).
 
-## Example `gulpfile.js`
-One markdown file out per source file in:
+## `gulpfile.js` examples
+
+### One markdown file out per source file in
 ```js
 "use strict";
 var gulp = require("gulp");
@@ -32,8 +33,14 @@ gulp.task("docs", function(){
 });
 ```
 
-Multiple source files in, one markdown file out (`"api/all.md"`):
+### Multiple source files in, a single markdown file out
 ```js
+"use strict";
+var gulp = require("gulp");
+var gutil = require("gulp-util");
+var gulpJsdoc2md = require("gulp-jsdoc-to-markdown");
+var concat = require("gulp-concat");
+
 gulp.task("docs", function() {
     return gulp.src("lib/*.js")
         .pipe(concat("all.md"))
