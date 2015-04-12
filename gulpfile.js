@@ -10,9 +10,10 @@ gulp.task("clean", function(done){
     del("tmp", done);
 });
 
+/* one input, one output file */
 gulp.task("one", [ "clean" ], function(){
     return gulp.src("test/fixture/code.js")
-        .pipe(jsdoc2md({ private: true }))
+        .pipe(jsdoc2md({ "private": true }))
         .on("error", function(err){
             gutil.log("jsdoc2md failed:", err.message);
         })
@@ -20,6 +21,7 @@ gulp.task("one", [ "clean" ], function(){
         .pipe(gulp.dest("tmp/one"));
 });
 
+/* multiple in, multiple out */
 gulp.task("two", [ "clean" ], function(){
     return gulp.src("test/fixture/*.js")
         .pipe(jsdoc2md())
@@ -32,7 +34,7 @@ gulp.task("two", [ "clean" ], function(){
         .pipe(gulp.dest("tmp/two"));    
 });
 
-/* streaming mode */
+/* multiple in, multiple out, streaming mode */
 gulp.task("three", [ "clean" ], function(){
     return gulp.src("test/fixture/*.js", { buffer: false })
         .pipe(jsdoc2md())
@@ -45,15 +47,18 @@ gulp.task("three", [ "clean" ], function(){
         .pipe(gulp.dest("tmp/three"));    
 });
 
+/* multiple in, one file out
+note: concat doesn't support streaming mode */
 
 gulp.task("four", [ "clean" ], function() {
     return gulp.src("test/fixture/*.js")
         .pipe(concat("all.md"))
-        .pipe(jsdoc2md({ private: true }))
+        .pipe(jsdoc2md({ "private": true }))
         .on("error", function(err){
             gutil.log("jsdoc2md failed:", err.message);
         })
         .pipe(gulp.dest("tmp/four"));
 });
+
 
 gulp.task("default", [ "clean", "one", "two", "three", "four" ]);
