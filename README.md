@@ -1,17 +1,13 @@
 [![view on npm](http://img.shields.io/npm/v/gulp-jsdoc-to-markdown.svg)](https://www.npmjs.org/package/gulp-jsdoc-to-markdown)
 [![npm module downloads per month](http://img.shields.io/npm/dm/gulp-jsdoc-to-markdown.svg)](https://www.npmjs.org/package/gulp-jsdoc-to-markdown)
-[![Build Status](https://travis-ci.org/75lb/gulp-jsdoc-to-markdown.svg?branch=next)](https://travis-ci.org/75lb/gulp-jsdoc-to-markdown)
-[![Dependency Status](https://david-dm.org/75lb/gulp-jsdoc-to-markdown.svg)](https://david-dm.org/75lb/gulp-jsdoc-to-markdown)
+[![Build Status](https://travis-ci.org/jsdoc2md/gulp-jsdoc-to-markdown.svg?branch=master)](https://travis-ci.org/jsdoc2md/gulp-jsdoc-to-markdown)
+[![Dependency Status](https://david-dm.org/jsdoc2md/gulp-jsdoc-to-markdown.svg)](https://david-dm.org/jsdoc2md/gulp-jsdoc-to-markdown)
 
-# gulp-jsdoc-to-markdown@next (preview release)
-Plugin for [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown). Works in both buffer and streaming modes.
-
-This is a preview release for the next version so feedback is welcome at this point! 
-
-Try generating your docs using this preview plugin.. Any issues or feedback, let me know! 
+# gulp-jsdoc-to-markdown
+Plugin for [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown). Works in both buffer and streaming modes.
 
 ## Warning
-Due to the streaming nature of gulp conflicting with the way jsdoc renders `@module` tags (where file name and structure is significant), use of this plugin with input containing multiple @modules can cause explosions. Investigating a solution. If you're documenting multiple modules, use a gulp task like [this one](https://github.com/75lb/jsdoc-to-markdown#as-a-gulp-task).
+Due to the streaming nature of gulp conflicting with the way jsdoc renders `@module` tags (where file name and structure is significant), use of this plugin with input containing multiple @modules can cause explosions. Investigating a solution. If you're documenting multiple modules, use a gulp task like [this one](https://github.com/jsdoc2md/jsdoc-to-markdown#as-a-gulp-task).
 
 ## Example `gulpfile.js`
 One markdown file out per source file in:
@@ -19,13 +15,13 @@ One markdown file out per source file in:
 "use strict";
 var gulp = require("gulp");
 var gutil = require("gulp-util");
-var jsdoc2md = require("gulp-jsdoc-to-markdown");
+var gulpJsdoc2md = require("gulp-jsdoc-to-markdown");
 var rename = require("gulp-rename");
 var concat = require("gulp-concat");
 
 gulp.task("docs", function(){
-    return gulp.src("src/*.js")
-        .pipe(jsdoc2md())
+    return gulp.src("lib/*.js")
+        .pipe(gulpJsdoc2md())
         .on("error", function(err){
             gutil.log(gutil.colors.red("jsdoc2md failed"), err.message)
         })
@@ -39,9 +35,9 @@ gulp.task("docs", function(){
 Multiple source files in, one markdown file out (`"api/all.md"`):
 ```js
 gulp.task("docs", function() {
-    return gulp.src("src/*.js")
+    return gulp.src("lib/*.js")
         .pipe(concat("all.md"))
-        .pipe(jsdoc2md())
+        .pipe(gulpJsdoc2md())
         .on("error", function(err){
             gutil.log("jsdoc2md failed:", err.message);
         })
@@ -50,10 +46,15 @@ gulp.task("docs", function() {
 ```
 
 ## Install
-```sh
-$ npm install gulp-jsdoc-to-markdown@next --save-dev
+Install this plugin:
+```
+$ npm install gulp-jsdoc-to-markdown --save-dev
+```
+If using one of the example gulpfiles above you will also need to run:
+```
+$ npm i gulp gulp-util gulp-concat gulp-rename --save-dev
 ```
 
-* * * 
+* * *
 
-*documented by [jsdoc-to-markdown](https://github.com/75lb/jsdoc-to-markdown)*
+&copy; 2015 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).

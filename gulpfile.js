@@ -7,7 +7,11 @@ var del = require("del");
 var concat = require("gulp-concat");
 
 gulp.task("clean", function(done){
-    del("tmp", done);
+    del("tmp", function(){
+        fs.mkdirSync("tmp");
+        fs.mkdirSync("tmp/task1");
+        done()
+    });
 });
 
 /* one input, one output file */
@@ -31,7 +35,7 @@ gulp.task("two", [ "clean" ], function(){
         .pipe(rename(function(path){
             path.extname = ".md";
         }))
-        .pipe(gulp.dest("tmp/two"));    
+        .pipe(gulp.dest("tmp/two"));
 });
 
 /* multiple in, multiple out, streaming mode */
@@ -44,7 +48,7 @@ gulp.task("three", [ "clean" ], function(){
         .pipe(rename(function(path){
             path.extname = ".md";
         }))
-        .pipe(gulp.dest("tmp/three"));    
+        .pipe(gulp.dest("tmp/three"));
 });
 
 /* multiple in, one file out
@@ -59,6 +63,5 @@ gulp.task("four", [ "clean" ], function() {
         })
         .pipe(gulp.dest("tmp/four"));
 });
-
 
 gulp.task("default", [ "clean", "one", "two", "three", "four" ]);

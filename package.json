@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "gulp-util": "^3.0.0",
-    "jsdoc-to-markdown": "next",
+    "jsdoc-to-markdown": "^1",
     "through2": "~0.6.2"
   }
 }
