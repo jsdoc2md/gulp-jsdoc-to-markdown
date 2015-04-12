@@ -3,7 +3,7 @@
   "author": "Lloyd Brookes <75pound@gmail.com>",
   "version": "0.2.0",
   "description": "gulp-jsdoc-to-markdown",
-  "repository": "https://github.com/75lb/gulp-jsdoc-to-markdown.git",
+  "repository": "https://github.com/jsdoc2md/gulp-jsdoc-to-markdown.git",
   "main": "./lib/gulp-jsdoc-to-markdown.js",
   "keywords": [
     "gulpplugin",
