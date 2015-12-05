@@ -18,7 +18,7 @@ gulp.task('clean', function (done) {
 /* one input, one output file */
 gulp.task('one', [ 'clean' ], function () {
   return gulp.src('test/fixture/code.js')
-    .pipe(gulpJsdoc2md({ 'private': true }))
+    .pipe(gulpJsdoc2md({ 'private': true, 'sort-by': 'name' }))
     .on('error', function (err) {
       gutil.log('jsdoc2md failed:', err.message)
     })
