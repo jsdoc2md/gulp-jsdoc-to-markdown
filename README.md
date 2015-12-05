@@ -2,16 +2,17 @@
 [![npm module downloads per month](http://img.shields.io/npm/dm/gulp-jsdoc-to-markdown.svg)](https://www.npmjs.org/package/gulp-jsdoc-to-markdown)
 [![Build Status](https://travis-ci.org/jsdoc2md/gulp-jsdoc-to-markdown.svg?branch=master)](https://travis-ci.org/jsdoc2md/gulp-jsdoc-to-markdown)
 [![Dependency Status](https://david-dm.org/jsdoc2md/gulp-jsdoc-to-markdown.svg)](https://david-dm.org/jsdoc2md/gulp-jsdoc-to-markdown)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 # gulp-jsdoc-to-markdown
 Plugin for [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown). Works in both buffer and streaming modes.
 
 ## Caveat
-If you intend to use this plugin and your code has modules, **you must always supply a name with the `@module` tag**. 
+If you intend to use this plugin and your code has modules, **you must always supply a name with the `@module` tag**.
 
-In other words `@module` will fail, `@module my-module` will win. 
+In other words `@module` will fail, `@module my-module` will win.
 
-If the module name is not provided, jsdoc will try to infer it from the filename of the module. However, gulp deals with streams - not files. And that stream could come from anywhere. We do not know the file name so we cannot infer the module name - so always supply it. [More info here](http://usejsdoc.org/tags-module.html). 
+If the module name is not provided, jsdoc will try to infer it from the filename of the module. However, gulp deals with streams - not files. And that stream could come from anywhere. We do not know the file name so we cannot infer the module name - so always supply it. [More info here](http://usejsdoc.org/tags-module.html).
 
 ## `gulpfile.js` examples
 
