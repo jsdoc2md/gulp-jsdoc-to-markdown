@@ -18,45 +18,45 @@ If the module name is not provided, jsdoc will try to infer it from the filename
 
 ### One markdown file out per source file in
 ```js
-"use strict";
-var fs = require("fs");
-var gulp = require("gulp");
-var gutil = require("gulp-util");
-var gulpJsdoc2md = require("gulp-jsdoc-to-markdown");
-var rename = require("gulp-rename");
-var concat = require("gulp-concat");
+'use strict'
+var fs = require('fs')
+var gulp = require('gulp')
+var gutil = require('gulp-util')
+var gulpJsdoc2md = require('gulp-jsdoc-to-markdown')
+var rename = require('gulp-rename')
+var concat = require('gulp-concat')
 
-gulp.task("docs", function(){
-    return gulp.src("lib/*.js")
-        .pipe(gulpJsdoc2md({ template: fs.readFileSync("./readme.hbs", "utf8") }))
-        .on("error", function(err){
-            gutil.log(gutil.colors.red("jsdoc2md failed"), err.message)
-        })
-        .pipe(rename(function(path){
-            path.extname = ".md";
-        }))
-        .pipe(gulp.dest("api"));
-});
+gulp.task('docs', function () {
+  return gulp.src('lib/*.js')
+    .pipe(gulpJsdoc2md({ template: fs.readFileSync('./readme.hbs', 'utf8') }))
+    .on('error', function (err) {
+      gutil.log(gutil.colors.red('jsdoc2md failed'), err.message)
+    })
+    .pipe(rename(function (path) {
+      path.extname = '.md'
+    }))
+    .pipe(gulp.dest('api'))
+})
 ```
 
 ### Multiple source files in, a single markdown file out
 ```js
-"use strict";
-var fs = require("fs");
-var gulp = require("gulp");
-var gutil = require("gulp-util");
-var gulpJsdoc2md = require("gulp-jsdoc-to-markdown");
-var concat = require("gulp-concat");
+'use strict'
+var fs = require('fs')
+var gulp = require('gulp')
+var gutil = require('gulp-util')
+var gulpJsdoc2md = require('gulp-jsdoc-to-markdown')
+var concat = require('gulp-concat')
 
-gulp.task("docs", function() {
-    return gulp.src("lib/*.js")
-        .pipe(concat("all.md"))
-        .pipe(gulpJsdoc2md({ template: fs.readFileSync("./readme.hbs", "utf8") }))
-        .on("error", function(err){
-            gutil.log("jsdoc2md failed:", err.message);
-        })
-        .pipe(gulp.dest("api"));
-});
+gulp.task('docs', function () {
+  return gulp.src('lib/*.js')
+    .pipe(concat('all.md'))
+    .pipe(gulpJsdoc2md({ template: fs.readFileSync('./readme.hbs', 'utf8') }))
+    .on('error', function (err) {
+      gutil.log('jsdoc2md failed:', err.message)
+    })
+    .pipe(gulp.dest('api'))
+})
 ```
 
 ## Install
