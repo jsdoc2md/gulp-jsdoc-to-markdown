@@ -1,5 +1,5 @@
 [![view on npm](http://img.shields.io/npm/v/gulp-jsdoc-to-markdown.svg)](https://www.npmjs.org/package/gulp-jsdoc-to-markdown)
-[![npm module downloads per month](http://img.shields.io/npm/dm/gulp-jsdoc-to-markdown.svg)](https://www.npmjs.org/package/gulp-jsdoc-to-markdown)
+[![npm module downloads](http://img.shields.io/npm/dt/gulp-jsdoc-to-markdown.svg)](https://www.npmjs.org/package/gulp-jsdoc-to-markdown)
 [![Build Status](https://travis-ci.org/jsdoc2md/gulp-jsdoc-to-markdown.svg?branch=master)](https://travis-ci.org/jsdoc2md/gulp-jsdoc-to-markdown)
 [![Dependency Status](https://david-dm.org/jsdoc2md/gulp-jsdoc-to-markdown.svg)](https://david-dm.org/jsdoc2md/gulp-jsdoc-to-markdown)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
@@ -71,4 +71,4 @@ $ npm i gulp gulp-util gulp-concat gulp-rename --save-dev
 
 * * *
 
-&copy; 2015 Lloyd Brookes \<75pound@gmail.com\>.
+&copy; 2014-16 Lloyd Brookes \<75pound@gmail.com\>.
