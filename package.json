@@ -1,7 +1,7 @@
 {
   "name": "gulp-jsdoc-to-markdown",
   "author": "Lloyd Brookes <75pound@gmail.com>",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Plugin for jsdoc-to-markdown. Works in both buffer and streaming modes.",
   "repository": "https://github.com/jsdoc2md/gulp-jsdoc-to-markdown.git",
   "main": "./lib/gulp-jsdoc-to-markdown.js",
