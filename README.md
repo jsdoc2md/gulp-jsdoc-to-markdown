@@ -4,6 +4,8 @@
 [![Dependency Status](https://david-dm.org/jsdoc2md/gulp-jsdoc-to-markdown.svg)](https://david-dm.org/jsdoc2md/gulp-jsdoc-to-markdown)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
+***This plugin is deprecated and will not work with jsdoc2md v2. To use jsdoc2md with gulp is so simple it requires only a task - not a plugin. [Please see this guide](https://github.com/jsdoc2md/jsdoc-to-markdown/wiki/How-to-use-with-gulp).***
+
 # gulp-jsdoc-to-markdown
 Plugin for [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown). Works in both buffer and streaming modes.
 
